@@ -7,28 +7,23 @@ int main(int argc, char **argv)
     else
     {
         int i = 0;
-        while (argv[1][i] != '\0')
+
+        while (argv[1][i])
         {
-            if (((argv[1][i] >= 110) && (argv[1][i] <= 122))
-                || ((argv[1][i] >= 78) && (argv[1][i] <= 90)))
-            {
-                write(1, (&argv[1][i] - 13), 1);
-                i++;
-            }
-            else if(((argv[1][i] >= 97) && (argv[1][i] <= 109))
-                || ((argv[1][i] >= 65) && (argv[1][i] <= 77)))
-            {
-                write(1, (&argv[1][i]) + 13, 1);
-                i++;
-            }
-            else
-            {
-                write(1, (&argv[1][i]), 1);
-                i++;
-            }
+            if((argv[1][i] >= 'a' && argv[1][i] <= 'm') 
+                || (argv[1][i] >= 'A' && argv[1][i] <= 'M'))
+                argv[1][i] += 13; 
+            else if((argv[1][i] >= 'n' && argv[1][i] <= 'z') 
+                || (argv[1][i] >= 'N' && argv[1][i] <= 'Z'))
+                argv[1][i] -= 13;
+            write(1, &argv[1][i], 1);
+            i++; 
         }
         write(1, "\n", 1);
     }
-    
+
     return (0);
 }
+
+//Char +- değişimini yapıp ardından write yap, 
+//İşlemi write içinde yapmak istediğinde çalışmıyor???
