@@ -70,3 +70,7 @@ int main(int argc, char **argv)
     return (0);
 
 }
+
+//Word counter ile kaç kelime olduğunu yani kaç tan "_" karakteri
+//ekleneceğini bul. Bunu da kullanarak malloc ile yeterli yer ayır. 
+//Yeni hafızaya yazarken '_' ekle ve büyük harfleri küçüğe çevir. 
