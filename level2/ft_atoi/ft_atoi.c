@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 
 int ft_atoi(const char *str)
 {
@@ -34,15 +32,6 @@ int ft_atoi(const char *str)
     return(number * sign);
 }
 
-int main(int argc, char **argv)
-{
-    (void) argc;
-
-    printf("my atoi:%d\n", ft_atoi(argv[1]));
-    printf("atoi:%d\n", atoi(argv[1]));
-
-}
-
 //işaret olayını öğrenip tekrar bir bak
 //şu anda - sayısına göre işareti belirleniyor
-//
+
