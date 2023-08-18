@@ -11,7 +11,7 @@ int abst(int x, int y)
 int *ft_range(int start, int end)
 {
     int size = abst(start, end) + 1;
-    int *arr = malloc(sizeof(char) * size);
+    int *arr = malloc(sizeof(int) * size);
     int i = 0;
     if (end > start)
     {
