@@ -1,36 +1,30 @@
 #include <unistd.h>
 
-int atoi(char *number)
+int	ft_atoi(char *str)
 {
-    int i = 0;
-    int result = 0;
-    while (number[i])
-    {
-        result = (result * 10) + (number[i] - 48);
-        i++;
-    }
-    return (result);
+	int n = 0;
+
+	while (*str != '\0')
+	{
+		n = n * 10;
+		n = n + *str - '0';
+		++str;
+	}
+	return (n);
 }
 
-int nb_len(char *s)
+void	print_hex(int n)
 {
-    int i = 0;
-    while(s[i])
-        i++;
-    return (i);
+	char hex_digits[] = "0123456789abcdef";
+
+	if (n >= 16)
+		print_hex(n / 16);
+	write(1, &hex_digits[n % 16], 1);
 }
 
-#include <stdio.h>
-int main(int ac, char **av)
+int	main(int argc, char **argv)
 {
-    if (ac == 2)
-    {
-        char hex[17] = "0123456789abcdef";
-        int nb = atoi(av[1]);
-        int len = nb_len(av[1]);
-        
-        
-    }
-    write(1, "\n", 1);
-    return (0);
-    }
+	if (argc == 2)
+		print_hex(ft_atoi(argv[1]));
+	write(1, "\n", 1);
+}
